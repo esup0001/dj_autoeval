@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - autoeval_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=autoeval
+    ports:
+      - "4000:5432"
+volumes:
+  autoeval_data:
